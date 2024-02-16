@@ -3,21 +3,19 @@ import { ICounterState } from "./counter.types";
 
 class CounterReducers {
 
-    constructor() {}
-
-    increment(state: ICounterState, action: PayloadAction<number>) {
+    private static increment(state: ICounterState, action: PayloadAction<number>) {
         state.counter += action.payload;
     }
 
-    decrement(state: ICounterState, action: PayloadAction<number>) {
+    private static decrement(state: ICounterState, action: PayloadAction<number>) {
         state.counter -= action.payload;
     }
 
-    reset(state: ICounterState) {
+    private static reset(state: ICounterState) {
         state.counter = 0;
     }
     
-    reducers() {
+    static reducers() {
         return {
             increment: this.increment,
             decrement: this.decrement,

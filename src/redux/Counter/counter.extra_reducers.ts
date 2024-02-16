@@ -1,17 +1,12 @@
 import { ActionReducerMapBuilder, PayloadAction } from "@reduxjs/toolkit";
+import { IFetchCounter, IFetchCounterParams } from "./counter.types";
 import { ICounterState } from ".";
 
 import AsyncThunks from "./counter.async_thunks";
-import { IFetchCounter, IFetchCounterParams } from "./counter.types";
 
 class CounterExtraReducers {
-    private readonly builder: ActionReducerMapBuilder<ICounterState>;
 
-    constructor(builder: ActionReducerMapBuilder<ICounterState>) {
-        this.builder = builder;
-    }
-
-    fetchPosts = {
+    private static fetchPosts = {
         pending(state: ICounterState, action: Pending<IFetchCounterParams>) {
             console.log("Pending:", state, action)
         },
@@ -23,16 +18,16 @@ class CounterExtraReducers {
         }
     }
 
-    addCasesToBuilder(name: keyof typeof AsyncThunks) {
-        this.builder.addCase(AsyncThunks[name].pending, this[name].pending);
-        this.builder.addCase(AsyncThunks[name].fulfilled, this[name].fulfilled);
-        this.builder.addCase(AsyncThunks[name].rejected, this[name].rejected);
+    private static addCasesToBuilder(builder: ActionReducerMapBuilder<ICounterState>, name: keyof typeof AsyncThunks) {
+        builder.addCase(AsyncThunks[name].pending, this[name].pending);
+        builder.addCase(AsyncThunks[name].fulfilled, this[name].fulfilled);
+        builder.addCase(AsyncThunks[name].rejected, this[name].rejected);
     }
     
-    extraReducers() {
-        this.addCasesToBuilder("fetchPosts");
+    static extraReducers(builder: ActionReducerMapBuilder<ICounterState>) {
+        this.addCasesToBuilder(builder, "fetchPosts");
 
-        return this.builder;
+        return builder;
     }
 }
 

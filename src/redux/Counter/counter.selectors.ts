@@ -2,13 +2,11 @@ import { ICounterState } from "./counter.types";
 
 class CounterSelectors {
 
-    constructor() {}
-
-    getCounter(state: ICounterState) {
+    private static getCounter(state: ICounterState) {
         return state.counter;
     }
 
-    selectors() {
+    static selectors() {
         return {
             getCounter: this.getCounter,
         };

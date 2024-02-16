@@ -12,9 +12,9 @@ const initialState: ICounterState = {
 export const counterSlice = createAppSlice({
     name: "counter",
     initialState,
-    selectors: new CounterSelectors().selectors(),
-    reducers: new CounterReducers().reducers(),
-    extraReducers: (builder) => new CounterExtraReducers(builder).extraReducers(),
+    selectors: CounterSelectors.selectors(),
+    reducers: CounterReducers.reducers(),
+    extraReducers: (builder) => CounterExtraReducers.extraReducers(builder),
 });
 
 // Action creators are generated for each case reducer function
