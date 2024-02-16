@@ -31,6 +31,6 @@
       "@Pages/*": ["./pages/*"],
     }
   },
-  "include": ["src/*", "src/pages/homepage/Homepage.tsx"],
+  "include": ["src/**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
