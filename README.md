@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+# React Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React template with Redux, path aliases and component design.
 
-Currently, two official plugins are available:
+## How to start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To start the React template, follow these steps:
 
-## Expanding the ESLint configuration
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies by running the command:
+ ```bash
+ npm install
+ ```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Start development
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+To start development, run the following command:
+```bash
+npm start
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Folder Structure
+```plaintext
+────src
+    ├───components
+    │   └───custombutton
+    │           custombutton.tsx
+    │           custombutton.types.ts
+    │           index.ts
+    │
+    ├───redux
+    │   └───Counter
+    │           counter.async_thunks.ts
+    │           counter.extra_reducers.ts
+    │           counter.reducers.ts
+    │           counter.selectors.ts
+    │           counter.slice.ts
+    │           counter.types.ts
+    │           index.ts
+    │   │
+    │   hooks.ts
+    │   persist.config.ts
+    │   store.ts
+    │
+    App.tsx
+```
