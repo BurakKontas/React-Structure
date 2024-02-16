@@ -29,6 +29,11 @@ npm start
     │           custombutton.tsx
     │           custombutton.types.ts
     │           index.ts
+    ├───pages
+    │   └───homepage
+    │           Homepage.module.scss
+    │           Homepage.tsx
+    │           index.ts
     │
     ├───redux
     │   └───Counter
@@ -44,5 +49,7 @@ npm start
     │   persist.config.ts
     │   store.ts
     │
-    App.tsx
+    router.tsx
+    providers.tsx
+    main.tsx
 ```

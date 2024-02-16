@@ -27,9 +27,10 @@
     "paths": {
       "@/*": ["./*"],
       "@Components/*": ["./components/*"],
-      "@Redux/*": ["./redux/*"]
+      "@Redux/*": ["./redux/*"],
+      "@Pages/*": ["./pages/*"],
     }
   },
-  "include": ["src/*"],
+  "include": ["src/*", "src/pages/homepage/Homepage.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
