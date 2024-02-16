@@ -1,6 +1,6 @@
 # React Template
 
-React template with Redux, path aliases and component design.
+Explore a robust React template empowered with Typescript, Vite for rapid development, Redux for state management, Redux-Persist for persistent state storage, integrated path aliases for enhanced module imports, and a meticulously organized folder structure optimized for components and Redux slices.
 
 ## How to start
 
