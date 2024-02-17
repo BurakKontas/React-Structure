@@ -31,7 +31,6 @@
       "@Services/*": ["./services/*"],
       "@Hooks/*": ["./hooks/*"],
       "@/*": ["./*"],
-
     }
   },
   "include": ["src/**/*"],
